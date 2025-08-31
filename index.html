@@ -4,13 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payoo</title>
+    <!-- daisyUI cdn -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn -->
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <!-- css styles sheet -->
+       <link rel="stylesheet" href="styles/payoo.css">
 </head>
-<body>
-    <header>
-         <h1>this heading is for testing 2nd commit</h1>
-    </header>
-    <main>
+<body class="bg-[#f4f5f7] ">
+    <header class="h-[100vh] flex justify-center items-center flex-col"> 
+            <div class="bg-[#f4f5f7] h-[130px] w-[300px]  bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+                 <!-- img div -->
+                  <img src="assets/Group.png" alt="group-pic">
+                
+                 
+            </div>
+          <div class=" login_box   bg-white   ">
+               <!-- form div -->
+               <form class=" rounded-2xl p-5">
+                <div class="mt-5 ">
+                    <label for="mobile-num" class="font-semibold">Mobile-Number</label>
+                  <br>
+                  <input type="text" placeholder="Enter your number" class="input rounded-3xl w-[350px] mt-3" />
+                </div>
+                  <div class="mt-3  " >
+                        <label for="pin" class="font-semibold">4 Digit Pin</label>
+                       <br>
+                  <input type="text" placeholder="Enter 4 Digit Pin" class="input rounded-3xl w-[350px] mt-3" />
+                  </div>
+                  <button id="login-btn" class="btn btn-primary w-full mt-3 rounded-3xl bg-[#0874f2]">Login</button>
 
-    </main>
+               </form>
+          </div>
+
+
+    </header>
+    <script src="js/index.js"></script>
 </body>
 </html>
