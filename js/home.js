@@ -1,3 +1,20 @@
+//  reuseable code  
+
+// optional ... এই খানে জেই কোডটী ব্যাবহার করা হয়েছে সেটা ইচ্ছা হলে ব্যাবহার  করতে পার।
+function integerConvetor(id){
+    const numberValue= document.getElementById(id)
+    const numberValueInput= numberValue.value
+    const integerNumber = parseInt(numberValueInput);
+
+    return integerNumber;
+}
+
+
+
+
+
+
+
 // add money functionality
  const validPin=1234;
   document.getElementById('add-money-btn')
@@ -10,7 +27,8 @@
               return;
       }
     //   pin check 
-     const pinNumber=parseInt(document.getElementById("pin-number").value);
+    //  const pinNumber=parseInt(document.getElementById("pin-number").value);
+    const pinNumber = integerConvetor("pin-number")
      if(pinNumber !== validPin){
             alert("Enter 4 digit valid pin number");
             return;
@@ -28,6 +46,7 @@
       
       
   })
+
 
 //   cashout money functionality
   document.getElementById("withdraw-btn")
@@ -58,21 +77,53 @@
   })
 
 
+
 //   togoling functionality
 
+// togolin function 
+   function switchButton(id){
+     const allForms = document.getElementsByClassName("form");
+    for(const form of allForms){
+         form.style.display= "none";
+    }
+    document.getElementById(id).style.display = "block";
+   }
 
+// add money section
   document.getElementById("add-money-box-btn")
   .addEventListener('click',function (){
-    console.log("add money btn worked")
+    
 
-     document.getElementById("add-money-sec").style.display = "block";
-     document.getElementById("cash-out-sec").style.display = "none";
+    //  document.getElementById("add-money-sec").style.display = "block";
+    //  document.getElementById("cash-out-sec").style.display = "none";
+
+    // অনেক গুলা একি রকমের কোড এর জন্য নিচের কোড ব্যাবহার করা হয়েছে 
+     switchButton("add-money-sec")
+
   })
+
+//   cash out section
   document.getElementById("cash-out-box-btn")
-  .addEventListener('click',function(){
-      document.getElementById("cash-out-sec").style.display = "block";
-      document.getElementById("add-money-sec").style.display = "none";
-    console.log("cashout btn worked")
+  .addEventListener('click',function(){   
+    switchButton("cash-out-sec")
+  })
+
+// Transfer Money section 
+
+
+ document.getElementById("transfer-money-box-btn")
+  .addEventListener('click',function(){  
+    switchButton("transfer-money-sec")
+  })
+//   Get-Bonus section
+ document.getElementById("Get-Bonus-box-btn")
+  .addEventListener('click',function(){  
+    switchButton("get-bonus-sec")
+  })
+//   "pay bill section
+ document.getElementById("pay-bill-box-btn")
+  .addEventListener('click',function(){  
+    switchButton("pay-bill-sec")
   })
 
 

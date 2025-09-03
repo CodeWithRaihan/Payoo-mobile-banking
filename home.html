@@ -42,7 +42,7 @@
 
 
     </header>
-    <main>
+    <main >
         <!-- card section  card-btns -->
          <section class="main_section-1">
             <div class="card container h-[250px]  max-w-lg mx-auto grid grid-cols-3 gap-4  p-6  ">
@@ -54,16 +54,16 @@
                         <img class="mx-auto" src="assets/send1.png" alt="sendmoney-pic">
                         <h4 class="text-center  ">Cashout</h4>
                     </div>
-                    <div class=" card-btns border-1 border-[#0808081a]  p-3 rounded-lg bg-[#ffffff]">
+                    <div id="transfer-money-box-btn" class=" card-btns border-1 border-[#0808081a]  p-3 rounded-lg bg-[#ffffff]">
                         <img class="mx-auto" src="assets/money1.png" alt="sendmoney-pic">
                         <h4 class="text-center  ">Transfer Money</h4>
                     </div>
                     
-                    <div class=" card-btns border-1 border-[#0808081a]  p-3 rounded-lg bg-[#ffffff]">
+                    <div id="Get-Bonus-box-btn" class=" card-btns border-1 border-[#0808081a]  p-3 rounded-lg bg-[#ffffff]">
                         <img class="mx-auto" src="assets/bonus1.png" alt="sendmoney-pic">
                         <h4 class="text-center  ">Get Bonus</h4>
                     </div>
-                    <div class=" card-btns border-1 border-[#0808081a]  p-3 rounded-lg bg-[#ffffff]">
+                    <div id="pay-bill-box-btn" class=" card-btns border-1 border-[#0808081a]  p-3 rounded-lg bg-[#ffffff]">
                         <img class="mx-auto" src="assets/purse1.png" alt="sendmoney-pic">
                         <h4 class="text-center  ">Pay Bill</h4>
                     </div>
@@ -76,10 +76,10 @@
          </section>
 
           <!-- add money section 1 -->
-         <section class="add-money-section  p-5">
+         <section class="add-money-section ">
                  
-                  <div id="add-money-sec" class="max-w-lg mx-auto" style="display: none;">
-                       <h1 class="font-bold text-xl">Add Money</h1>
+                  <div id="add-money-sec" class="form max-w-lg mx-auto" style="display: block;">
+                       <h1 class="font-bold text-xl pl-4">Add Money</h1>
                        <form class=" rounded-2xl p-5">
                             <div class="mt-5 ">
                             <label for="bank" class="font-semibold ">Select A Bank</label>
@@ -115,9 +115,9 @@
 
          </section>
          <!-- cashout section 2  -->
-          <section class="cashout-section p-5">
-                 <div id="cash-out-sec" class="max-w-lg mx-auto" style="display: none;">
-                       <h1 class="font-bold text-xl">Cash Out</h1>
+          <section class="cashout-section ">
+                 <div id="cash-out-sec" class="form max-w-lg mx-auto" style="display: none;">
+                       <h1 class="font-bold text-xl pl-4">Cash Out</h1>
                        <form class=" rounded-2xl p-5">
                             
                             <div class="mt-3  " >
@@ -141,9 +141,9 @@
                   </div>
           </section>
           <!-- Transfer Money section 3 -->
-          <section class="Transfer-Money-section p-5">
-                 <div id="transfer-money-sec" class="max-w-lg mx-auto" style="display: none;">
-                       <h1 class="font-bold text-xl">Transfer Money</h1>
+          <section class="Transfer-Money-section ">
+                 <div id="transfer-money-sec" class="form max-w-lg mx-auto" style="display: none;">
+                       <h1 class="font-bold text-xl pl-4">Transfer Money</h1>
                        <form class=" rounded-2xl p-5">
                             
                             <div class="mt-3  " >
@@ -167,10 +167,10 @@
                   </div>
           </section>
           <!-- Get Bonus section 4 -->
-           <section class="Get-Bonus-section p-5">
+           <section class="Get-Bonus-section ">
                      
-                 <div id="get-bonus-sec" class="max-w-lg mx-auto" style="display: none;">
-                       <h1 class="font-bold text-xl">Get Bonus</h1>
+                 <div id="get-bonus-sec" class="form max-w-lg mx-auto" style="display: none;">
+                       <h1 class="font-bold text-xl pl-4">Get Bonus</h1>
                        <form class=" rounded-2xl p-5">
                             
                             <div class="mt-3  " >
@@ -186,12 +186,12 @@
 
            </section>
            <!-- Pay Bill section 5-->
-            <section class="add-money-section p-5">
+            <section class="pay-bill-section ">
                  
-                  <div id="pay-bill-sec" class="max-w-lg mx-auto" style="display: none;">
-                       <h1 class="font-bold text-xl">Pay Bill</h1>
+                  <div id="pay-bill-sec" class="form max-w-lg mx-auto" style="display: none;">
+                       <h1 class="font-bold text-xl pl-4">Pay Bill</h1>
                        <form class=" rounded-2xl p-5">
-                            <div class="mt-5 ">
+                            <div class="mt-3">
                             <label for="bank" class="font-semibold ">Select To Pay</label>
                             <br>
                             <select class="select w-full rounded-3xl mt-3 border-none">
@@ -201,17 +201,17 @@
                             <option>Velvet</option>
                             </select>
                             </div>
-                            <div class="mt-3  " >
+                            <div class="mt-3" >
                                     <label for="Biller-account-numberr" class="font-semibold">Biller Account Number</label>
                                 <br>
                             <input  type="text" placeholder="Enter account number" class="input rounded-3xl w-full mt-3 border-none" />
                             </div>
-                            <div class="mt-3  " >
+                            <div class="mt-3" >
                                     <label for="amount-number-pay" class="font-semibold">Amount to Pay</label>
                                 <br>
                             <input  type="text" placeholder="Add Amount to pay" class="input rounded-3xl w-full mt-3 border-none" />
                             </div>
-                            <div class="mt-3  " >
+                            <div class="mt-3" >
                                     <label for="accunt-number" class="font-semibold">Pin Number</label>
                                 <br>
                             <input  type="text" placeholder="Enter 4 digit pin number" class="input rounded-3xl w-full mt-3 border-none" />
