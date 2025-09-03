@@ -88,6 +88,16 @@ function integerConvetor(id){
     }
     document.getElementById(id).style.display = "block";
    }
+//  button active hover togoling 
+  function buttonTogoling(id){
+    const cardBtns= document.getElementsByClassName("card-btns")
+    for(const Btns of cardBtns){
+         Btns.classList.remove("border-[#0874f2]","bg-[#0874f20d]");
+         Btns.classList.add("border-[#0808081a]");
+    }
+    document.getElementById(id).classList.remove("border-[#0808081a]");
+    document.getElementById(id).classList.add("border-[#0874f2]","bg-[#0874f20d]");
+  }
 
 // add money section
   document.getElementById("add-money-box-btn")
@@ -98,14 +108,17 @@ function integerConvetor(id){
     //  document.getElementById("cash-out-sec").style.display = "none";
 
     // অনেক গুলা একি রকমের কোড এর জন্য নিচের কোড ব্যাবহার করা হয়েছে 
-     switchButton("add-money-sec")
+     switchButton("add-money-sec");
+     buttonTogoling("add-money-box-btn")
 
+    
   })
 
 //   cash out section
   document.getElementById("cash-out-box-btn")
   .addEventListener('click',function(){   
-    switchButton("cash-out-sec")
+    switchButton("cash-out-sec");
+    buttonTogoling("cash-out-box-btn");
   })
 
 // Transfer Money section 
@@ -113,17 +126,21 @@ function integerConvetor(id){
 
  document.getElementById("transfer-money-box-btn")
   .addEventListener('click',function(){  
-    switchButton("transfer-money-sec")
+    switchButton("transfer-money-sec");
+    buttonTogoling("transfer-money-box-btn");
+
   })
 //   Get-Bonus section
  document.getElementById("Get-Bonus-box-btn")
   .addEventListener('click',function(){  
-    switchButton("get-bonus-sec")
+    switchButton("get-bonus-sec");
+    buttonTogoling("Get-Bonus-box-btn");
   })
 //   "pay bill section
  document.getElementById("pay-bill-box-btn")
   .addEventListener('click',function(){  
-    switchButton("pay-bill-sec")
+    switchButton("pay-bill-sec");
+    buttonTogoling("pay-bill-box-btn");
   })
 
 
