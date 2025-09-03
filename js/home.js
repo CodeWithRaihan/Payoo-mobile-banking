@@ -17,6 +17,7 @@ function integerConvetor(id){
 
 // add money functionality
  const validPin=1234;
+ const transactionData=[];
   document.getElementById('add-money-btn')
   .addEventListener('click',function(e){
       e.preventDefault()
@@ -42,7 +43,13 @@ function integerConvetor(id){
 
       const addAmountOutput=titleAmount+addAmount;
       titleAmountElement.innerText=addAmountOutput;
-
+      
+      const data = {
+           name: 'Add Money',
+           date:new Date().toLocaleTimeString()
+      }
+      
+      transactionData.push(data);
       
       
   })
@@ -72,11 +79,46 @@ function integerConvetor(id){
       const addAmountOutput=titleAmount - cashOuntInput;
       titleAmountElement.innerText=addAmountOutput;
       
-
+    
+    const data = {
+           name: 'Cashout',
+           date:new Date().toLocaleTimeString()
+      }
+      
+      transactionData.push(data);
+       
       
   })
 
+//  transaction history functionality
 
+document.getElementById("transaction-box-btn")
+.addEventListener('click',function (){
+     
+    const transactionContainer = document.getElementById("transaction-container")
+    transactionContainer.innerText="";
+    for(const data of transactionData){
+         const div = document.createElement("div")
+         div.innerHTML=`
+             <div class="flex justify-between items-center  bg-white rounded-xl mt-3">
+                      <div  class="flex  items-center  ">
+                        <div class="rounded-full    bg-[#f4f5f7] p-3 ">
+                         <img src="assets/wallet1.png" alt=""   >
+                         </div>
+                         <div class="ml-3">
+                             <h4 class="font-semibold text-1xl" >${data.name}</h4>
+                             <p class="font-semibold text-sm" >${data.date}</p>
+                         </div>
+                      
+                      </div>
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                      </div>
+         ` 
+         transactionContainer.appendChild(div);
+    }
+     
+     
+})
 
 //   togoling functionality
 
@@ -142,5 +184,11 @@ function integerConvetor(id){
     switchButton("pay-bill-sec");
     buttonTogoling("pay-bill-box-btn");
   })
+//   transaction-history
+ 
 
-
+ document.getElementById("transaction-box-btn")
+  .addEventListener('click',function(){  
+    switchButton("transaction-history-sec");
+    buttonTogoling("transaction-box-btn");
+  })

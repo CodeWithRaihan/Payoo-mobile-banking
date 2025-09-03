@@ -11,7 +11,7 @@
      <!-- fontawesome cdn -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class=" w-full sm:w-[576px] md:w-[768px]  mx-auto">
+<body class=" w-full sm:w-[576px] md:w-[768px]  mx-auto bg-[#f4f5f7]">
     <!-- header part start form here -->
     <header>
         <section class="header_section_1">
@@ -67,7 +67,7 @@
                         <img class="mx-auto" src="assets/purse1.png" alt="sendmoney-pic">
                         <h4 class="text-center  ">Pay Bill</h4>
                     </div>
-                    <div class=" card-btns border-1 border-[#0808081a] p-3  rounded-lg bg-[#ffffff]">
+                    <div id="transaction-box-btn" class=" card-btns border-1 border-[#0808081a] p-3  rounded-lg bg-[#ffffff]">
                         <img class="mx-auto" src="assets/transaction1.png" alt="sendmoney-pic">
                         <h4 class="text-center ">Transactions</h4>
                     </div>
@@ -224,6 +224,20 @@
 
 
          </section>
+         <!-- Transaction History section 6 -->
+          <section class="Transaction-History-section">
+              <div id="transaction-history-sec" class="form max-w-lg mx-auto  " style="display: none;">
+                  <div class="flex justify-between items-center">
+                  <h1 class="font-bold text-xl pl-4">Transaction History</h1>
+                  <p class="text-[#8b8b8b]">View All</p>
+                  </div>
+              
+                 <!-- transaction section cards -->
+                <div id="transaction-container" >
+                    
+                </div>
+           
+          </section>
     </main>
 
 
