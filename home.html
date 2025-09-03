@@ -11,7 +11,8 @@
      <!-- fontawesome cdn -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body class=" max-w-lg  mx-auto">
+<body class=" w-full sm:w-[576px] md:w-[768px]  mx-auto">
+    <!-- header part start form here -->
     <header>
         <section class="header_section_1">
              <div class="nav-bar  flex justify-between items-center mx-auto border-b-1 border-gray-300 p-5 max-w-lg ">
@@ -20,7 +21,7 @@
                  <img class="h-[50px]" src="assets/Group.png" alt="group-pic">
 
                    <div>
-                      <h1 class="font-bold">$ <span>45000</span></h1>
+                      <h1 class="font-bold">$ <span id="title-amount">45000</span></h1>
                       <h5 class="text-[#8b8b8b]">Available Balance</h5>
                    </div>
               </div>
@@ -42,40 +43,42 @@
 
     </header>
     <main>
+        <!-- card section  card-btns -->
          <section class="main_section-1">
             <div class="card container h-[250px]  max-w-lg mx-auto grid grid-cols-3 gap-4  p-6  ">
                     <div class="border-1 border-[#0808081a] p-3 rounded-lg bg-[#ffffff] ">
                          <img class="mx-auto" src="assets/wallet1.png" alt="walltel-pic">
-                          <h4 class="text-center">Add Money</h4>
+                          <h4  class="text-center  card-btns">Add Money</h4>
                     </div>
                     <div class="border-1 border-[#0808081a] p-3 rounded-lg  bg-[#ffffff]">
                         <img class="mx-auto" src="assets/send1.png" alt="sendmoney-pic">
-                        <h4 class="text-center">Cashout</h4>
+                        <h4 class="text-center  card-btns">Cashout</h4>
                     </div>
                     <div class="border-1 border-[#0808081a]  p-3 rounded-lg bg-[#ffffff]">
                         <img class="mx-auto" src="assets/money1.png" alt="sendmoney-pic">
-                        <h4 class="text-center">Transfer Money</h4>
+                        <h4 class="text-center  card-btns">Transfer Money</h4>
                     </div>
                     
                     <div class="border-1 border-[#0808081a]  p-3 rounded-lg bg-[#ffffff]">
                         <img class="mx-auto" src="assets/bonus1.png" alt="sendmoney-pic">
-                        <h4 class="text-center">Get Bonus</h4>
+                        <h4 class="text-center  card-btns">Get Bonus</h4>
                     </div>
                     <div class="border-1 border-[#0808081a]  p-3 rounded-lg bg-[#ffffff]">
                         <img class="mx-auto" src="assets/purse1.png" alt="sendmoney-pic">
-                        <h4 class="text-center">Pay Bill</h4>
+                        <h4 class="text-center  card-btns">Pay Bill</h4>
                     </div>
                     <div class="border-1 border-[#0808081a] p-3  rounded-lg bg-[#ffffff]">
                         <img class="mx-auto" src="assets/transaction1.png" alt="sendmoney-pic">
-                        <h4 class="text-center">Transactions</h4>
+                        <h4 class="text-center  card-btns">Transactions</h4>
                     </div>
             </div>
 
          </section>
+
           <!-- add money section 1 -->
          <section class="add-money-section  p-5">
                  
-                  <div class="max-w-lg mx-auto">
+                  <div id="add-money-sec" class="max-w-lg mx-auto">
                        <h1 class="font-bold text-xl">Add Money</h1>
                        <form class=" rounded-2xl p-5">
                             <div class="mt-5 ">
@@ -91,19 +94,19 @@
                             <div class="mt-3  " >
                                     <label for="accunt-number" class="font-semibold">Bank Account Number</label>
                                 <br>
-                            <input  type="text" placeholder="Enter 11 digit account number" class="input rounded-3xl w-full mt-3 border-none" />
+                            <input id="bank-account-input" type="text" placeholder="Enter 11 digit account number" class="input rounded-3xl w-full mt-3 border-none" />
                             </div>
                             <div class="mt-3  " >
                                     <label for="amount-number" class="font-semibold">Amount to Add</label>
                                 <br>
-                            <input  type="text" placeholder="Add Amount to withdraw" class="input rounded-3xl w-full mt-3 border-none" />
+                            <input  id="add-amount-input"  type="text" placeholder="Add Amount to withdraw" class="input rounded-3xl w-full mt-3 border-none" />
                             </div>
                             <div class="mt-3  " >
                                     <label for="accunt-number" class="font-semibold">Pin Number</label>
                                 <br>
-                            <input  type="text" placeholder="Enter 4 digit pin number" class="input rounded-3xl w-full mt-3 border-none" />
+                            <input id="pin-number"  type="text" placeholder="Enter 4 digit pin number" class="input rounded-3xl w-full mt-3 border-none" />
                             </div>
-                            <button id="login-btn" class="btn btn-primary w-full mt-3 rounded-3xl bg-[#0874f2]">Add Money</button>
+                            <button id="add-money-btn" class="btn btn-primary w-full mt-3 rounded-3xl bg-[#0874f2]">Add Money</button>
 
                      </form>
                   </div>
@@ -222,5 +225,9 @@
 
          </section>
     </main>
+
+
+    <!-- js file -->
+     <script src="js/home.js"></script>
 </body>
 </html>
