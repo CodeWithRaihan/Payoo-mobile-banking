@@ -10,11 +10,6 @@ function integerConvetor(id){
 }
 
 
-
-
-
-
-
 // add money functionality
  const validPin=1234;
  const transactionData=[];
@@ -37,6 +32,10 @@ function integerConvetor(id){
 
     
       const addAmount=parseInt(document.getElementById("add-amount-input").value);
+      if(addAmount <= 0){
+         alert("invalid amount");
+         return;
+      }
 
       const titleAmountElement=document.getElementById("title-amount");
       const titleAmount=parseInt(titleAmountElement.innerText);
@@ -72,10 +71,14 @@ function integerConvetor(id){
             return;
      }
       const cashOuntInput=parseInt(document.getElementById("cashout-input-amount").value);
+      
     //   copy form add money section
         const titleAmountElement=document.getElementById("title-amount");
       const titleAmount=parseInt(titleAmountElement.innerText);
-
+       if(cashOuntInput <= 0 || cashOuntInput > titleAmount){
+           alert("invalid amount");
+           return;
+      }
       const addAmountOutput=titleAmount - cashOuntInput;
       titleAmountElement.innerText=addAmountOutput;
       
@@ -90,6 +93,69 @@ function integerConvetor(id){
       
   })
 
+
+// Transfer Money functionality 
+
+ document.getElementById("send-money-btn")
+ .addEventListener('click',function(e){
+       e.preventDefault()
+
+        const TransferAccountNumber=document.getElementById("transfer-acc-num").value;
+      if(TransferAccountNumber.length < 11){
+              alert("Enter 11 digit valid account number");
+              return;
+      }
+     const transferPinNumber = integerConvetor("transfer-pin-number")
+     if(transferPinNumber !== validPin){
+            alert("Enter 4 digit valid pin number");
+            return;
+     }
+       const transferAmount =parseInt(document.getElementById("transfer-amount").value);
+      
+       const titleAmountElement=document.getElementById("title-amount");
+       const titleAmount=parseInt(titleAmountElement.innerText);
+        if(transferAmount <= 0 || transferAmount > titleAmount){
+           alert("invalid amount");
+           return;
+      }
+       const addAmountOutput=titleAmount - transferAmount;
+       titleAmountElement.innerText=addAmountOutput;
+      
+       const data = {
+           name: 'Transfer Money',
+           date:new Date().toLocaleTimeString()
+      }
+      
+      transactionData.push(data)
+      
+ })
+
+// get bonus functionality
+  const bonusCoupon = 12345678910
+  document.getElementById("get-bonus-btn")
+  .addEventListener('click',function(e){
+     e.preventDefault()
+       const bonusCouponInput=parseInt(document.getElementById("bonus-coupon").value);
+       if(bonusCoupon !== bonusCouponInput){
+          alert("invalid coupon number");
+          return;
+       }
+       const bonusAmount=5000;
+       const titleAmountElement=document.getElementById("title-amount");
+      const titleAmount=parseInt(titleAmountElement.innerText);
+
+      const addAmountOutput=titleAmount+bonusAmount;
+      titleAmountElement.innerText=addAmountOutput;
+
+        const data = {
+           name: 'Bonus Added',
+           date:new Date().toLocaleTimeString()
+      }
+      
+      transactionData.push(data)
+
+  })
+
 // pay bill functionality
 
  document.getElementById("pay-now-btn")
@@ -101,9 +167,7 @@ function integerConvetor(id){
               alert("Enter 11 digit valid account number");
               return;
       }
-    //   pin check 
-    //  const pinNumber=parseInt(document.getElementById("pin-number").value);
-    const billPinNumber = integerConvetor("bill-pin-number")
+     const billPinNumber = integerConvetor("bill-pin-number")
      if(billPinNumber !== validPin){
             alert("Enter 4 digit valid pin number");
             return;
@@ -111,9 +175,13 @@ function integerConvetor(id){
 
 
       const amountToPay= parseInt(document.getElementById("amount-to-pay").value);
+    
       const titleAmountElement=document.getElementById("title-amount");
       const titleAmount=parseInt(titleAmountElement.innerText);
-
+       if(amountToPay <= 0 || amountToPay > titleAmount){
+           alert("invalid amount");
+           return;
+      }
       const addAmountOutput=titleAmount - amountToPay;
       titleAmountElement.innerText=addAmountOutput;
       
@@ -126,10 +194,8 @@ function integerConvetor(id){
       transactionData.push(data);
 
 
-      console.log(titleAmountElement)
+     
  })
-
-
 
 
 
@@ -162,6 +228,13 @@ document.getElementById("transaction-box-btn")
      
      
 }) 
+
+
+
+
+
+
+
 
 //   togoling functionality
 
