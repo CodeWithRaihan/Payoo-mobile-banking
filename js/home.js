@@ -90,6 +90,49 @@ function integerConvetor(id){
       
   })
 
+// pay bill functionality
+
+ document.getElementById("pay-now-btn")
+ .addEventListener('click',function(e){
+    e.preventDefault()
+       
+      const billerAccountNumber=document.getElementById("biller-account-num").value;
+      if(billerAccountNumber.length < 11){
+              alert("Enter 11 digit valid account number");
+              return;
+      }
+    //   pin check 
+    //  const pinNumber=parseInt(document.getElementById("pin-number").value);
+    const billPinNumber = integerConvetor("bill-pin-number")
+     if(billPinNumber !== validPin){
+            alert("Enter 4 digit valid pin number");
+            return;
+     }
+
+
+      const amountToPay= parseInt(document.getElementById("amount-to-pay").value);
+      const titleAmountElement=document.getElementById("title-amount");
+      const titleAmount=parseInt(titleAmountElement.innerText);
+
+      const addAmountOutput=titleAmount - amountToPay;
+      titleAmountElement.innerText=addAmountOutput;
+      
+
+     const data = {
+           name: 'Pay Bill',
+           date:new Date().toLocaleTimeString()
+      }
+      
+      transactionData.push(data);
+
+
+      console.log(titleAmountElement)
+ })
+
+
+
+
+
 //  transaction history functionality
 
 document.getElementById("transaction-box-btn")
@@ -118,7 +161,7 @@ document.getElementById("transaction-box-btn")
     }
      
      
-})
+}) 
 
 //   togoling functionality
 
