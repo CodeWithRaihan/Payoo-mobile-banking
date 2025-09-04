@@ -231,7 +231,12 @@ document.getElementById("transaction-box-btn")
 
 
 
+// Logout functionality 
 
+document.getElementById("logout-btn").addEventListener('click',function(e){
+    e.preventDefault()
+     window.location.href="./index.html";
+})
 
 
 
